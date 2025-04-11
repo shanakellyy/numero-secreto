@@ -3,6 +3,7 @@ const botao = document.getElementById("botao");
 const mensagem = document.getElementById("mensagem");
 const formulario = document.getElementById("formulario");
 const imagem = document.createElement("img"); // cria um elemento
+const titulo = document.getElementById("titulo");
 
 imagem.src = "imagem.jpg"; // endereço da imagem
 imagem.classList.add("imagem"); // atribui uma classe ao elemento
@@ -37,8 +38,9 @@ function enviar(event) {
     mensagem.innerHTML = "<p>O número secreto é MENOR.</p>";
     input.value = "";
   } else if (numero == numeroSecreto) {
-    mensagem.innerHTML = "<p><strong>Parabéns, você acertou!</strong></p>";
+    mensagem.innerHTML = "<h1>Parabéns, você acertou!</h1>";
     mensagem.appendChild(imagem);
+    titulo.style.display = "none";
     formulario.style.display = "none"; // esconde os campos do formulario
   }
 }
